@@ -1,0 +1,15 @@
+---
+# tasks file for ntp
+
+- name: Install ntp 
+  package:
+    name: "ntp"
+    state: latest
+  become: yes
+
+- name: Start ntpd service
+  service:
+    name: ntpd
+    state: started
+    enabled: yes
+  become: yes
